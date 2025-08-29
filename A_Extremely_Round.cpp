@@ -16,6 +16,34 @@ int main()
         int num;
         cin >> num;
 
+        int digit = (int) log10(num);
+        int ans = num / pow(10, digit) + digit * 9;
+        cout << ans << endl;
+    }
+
+    return 0;
+}
+
+
+
+#include <bits/stdc++.h>
+using namespace std;
+
+typedef long long ll;
+#define endl '\n'
+#define optimize() ios::sync_with_stdio(false); cin.tie(nullptr);
+
+int main() 
+{
+    optimize();
+
+    int test;
+    cin >> test;
+    while (test--)
+    {
+        int num;
+        cin >> num;
+
         int ans = 0, div = 1e5;
         while (num)
         {
@@ -64,3 +92,5 @@ int main()
 
     return 0;
 }
+
+
