@@ -27,3 +27,40 @@ int main()
 
     return 0;
 }
+
+
+
+#include <bits/stdc++.h>
+using namespace std;
+
+typedef long long ll;
+#define endl '\n'
+#define optimize() ios::sync_with_stdio(false); cin.tie(nullptr);
+
+int main() 
+{
+    optimize();
+
+    int test;
+    cin >> test;
+    while (test--)
+    {
+        int num;
+        cin >> num;
+
+        int ans = 0, div = 1e5;
+        while (num)
+        {
+            if (num / div)
+            {
+                ans += num / div;
+                ans += log10(div) * 9;
+                break;
+            } 
+            div /= 10;
+        }
+        cout << ans << endl;
+    }
+
+    return 0;
+}
