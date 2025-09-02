@@ -16,10 +16,11 @@ int main()
         int n, k;
         cin >> n >> k;
 
-        int ans = n & 1 ? (n -= k, --k, 1) : (--k, 0);
-        ans += n / k;
-        ans += n % k ? 1 : 0;
-        cout << ans << endl;
+        int op = 0;
+        op += n & 1 ? (n -= k, --k, 1) : (--k, 0);
+        op += n / k;
+        op += n % k ? 1 : 0;
+        cout << op << endl;
     }
 
     return 0;
