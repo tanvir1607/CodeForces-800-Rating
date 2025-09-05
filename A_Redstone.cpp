@@ -1,3 +1,4 @@
+// Approach 1: Using Map
 #include <bits/stdc++.h>
 using namespace std;
 
@@ -41,7 +42,7 @@ int main()
 
 
 
-
+// Approach 2: Using Map
 #include <bits/stdc++.h>
 using namespace std;
 
@@ -76,6 +77,7 @@ int main()
 
 
 
+// Approach 1: Using Set
 #include <bits/stdc++.h>
 using namespace std;
 

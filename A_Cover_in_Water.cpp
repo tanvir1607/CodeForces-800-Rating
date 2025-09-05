@@ -13,15 +13,10 @@ int solve()
     cin >> str;
 
     for (int i = 0, j = 1, k = 2; k < size; i++, j++, k++)
-    {
         if (str[i] == '.' && str[j] == '.' && str[k] == '.')
-        {
-            cout << 2 << endl;
-            return 0;
-        }
-    }
-    cout << count(str.begin(), str.end(), '.') << endl;   
-    return 0;
+            return 2;
+
+    return count(str.begin(), str.end(), '.');
 }
 
 int main() 
@@ -31,7 +26,7 @@ int main()
     int test;
     cin >> test;
     while (test--)
-        solve();
+        cout << solve() << endl;
 
     return 0;
 }

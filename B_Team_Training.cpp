@@ -13,15 +13,19 @@ int main()
     cin >> test;
     while (test--)
     {
-        int size, x;
-        cin >> size >> x;
+        int size, target;
+        cin >> size >> target;
         vector<int> vec(size);
         for (int &x : vec) cin >> x;
 
-        int ans = vec.front();
-        for (int i = 1; i < size; i++) ans = max(vec[i] - vec[i - 1], ans);
-        ans = max(ans, 2 * (x - vec.back()));
-        cout << ans << endl;
+        sort(vec.rbegin(), vec.rend());
+        int member = 1, team = 0;
+        for (int x : vec)
+        {
+            if (member * x >= target) team++, member = 1;
+            else member++;
+        }
+        cout << team << endl;
     }
 
     return 0;
