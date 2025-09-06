@@ -1,3 +1,4 @@
+// Approach - 1
 #include <bits/stdc++.h>
 using namespace std;
 
@@ -29,14 +30,13 @@ int main()
     {
         int score = 0;
         for (int i = 0; i < ROW; i++)
-        {
             for (int j = 0; j < COL; j++)
             {
                 char ch;
                 cin >> ch;
-                if (ch == 'X') score += scores[i][j];
+                score += (ch == 'X') * scores[i][j];
             }
-        }
+
         cout << score << endl;
     }
 
@@ -47,7 +47,7 @@ int main()
 
 
 
-
+// Approach - 2
 #include <bits/stdc++.h>
 using namespace std;
 
@@ -66,20 +66,14 @@ int main()
     while (test--)
     {
         vector<string> vec(SIZE);
-        for (auto &x : vec) cin >> x;
+        for (string &s : vec) cin >> s;
 
         int total = 0;
-        for(int row = 0; row < SIZE; row++)
-        {
-            for(int col = 0; col < SIZE; col++)
-            {
-                if(vec[row][col] == '.') continue;
-                int edgeRowDis = min(row, SIZE - 1 - row),
-                    edgeColDis = min(col, SIZE - 1 - col),
-                    score = 1 + min(edgeRowDis, edgeColDis);
-                total += score;
-            }
-        }
+        for(int i = 0; i < SIZE; i++)
+            for(int j = 0; j < SIZE; j++)
+                if(vec[i][j] == 'X')
+                    total += 1 + min({i, j, SIZE - 1 - i, SIZE - 1 - j});
+
         cout << total << endl;
     }
 

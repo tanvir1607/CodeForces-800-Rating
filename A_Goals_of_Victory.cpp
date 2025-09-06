@@ -15,7 +15,7 @@ int main()
     {
         int size, sum = 0, x;
         cin >> size;
-        for (int i = 0; i < size - 1; i++) cin >> x, sum += x;
+        while (--size) cin >> x, sum += x;
         cout << (-1) * sum << endl;
     }
 
