@@ -20,14 +20,15 @@ int main()
         
         if (is_sorted(vec.begin(), vec.end()))
         {
-            int diff = INT_MAX;
-            for (int i = 1; i < size; i++)
-                diff = min(diff, vec[i] - vec[i - 1]);
-            cout << (diff / 2) + 1 << endl;
-            // cout << (diff + 2) / 2 << endl;
+            int ans = INT_MAX;
+            for (int i = 1; i < size; i++) ans = min(vec[i] - vec[i - 1], ans);
+            cout << (ans + 2) / 2 << endl;
         }
         else cout << 0 << endl;
     }
 
     return 0;
 }
+
+
+

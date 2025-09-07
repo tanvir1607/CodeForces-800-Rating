@@ -15,11 +15,7 @@ int main()
     {
         int size, count = 0, x;
         cin >> size;
-        while (size--)
-        {
-            cin >> x;
-            if (x & 1) count++;
-        }
+        while (size--) cin >> x, x & 1 ? count++ : count;
         cout << ((count & 1) ? "NO" : "YES") << endl;
     }
 
