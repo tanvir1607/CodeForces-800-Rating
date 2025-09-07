@@ -9,15 +9,9 @@ int main()
 {
     optimize();
 
-    int size;
+    int size, ans = INT_MAX, x;
     cin >> size;
-    int ans = INT_MAX;
-    while (size--)
-    {
-        int x;
-        cin >> x;
-        ans = min(ans, abs(x));
-    }
+    while (size--) cin >> x, ans = min(ans, abs(x));
     cout << ans << endl;
 
     return 0;
