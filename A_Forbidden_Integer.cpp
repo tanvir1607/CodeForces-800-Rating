@@ -16,8 +16,8 @@ int main()
         int target, k, x;
         cin >> target >> k >> x;
 
-        if (k == 1 && x == 1) cout << "NO" << endl;
-        else if ((target & 1) && k <= 2 && x == 1) cout << "NO" << endl;
+        if (k == 1 && x == 1 || (target & 1) && k < 3 && x == 1) 
+            cout << "NO" << endl;
         else if (x != 1)
         {
             cout << "YES" << endl << target << endl;
