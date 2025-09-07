@@ -19,8 +19,7 @@ int main()
         for (int &x : a) cin >> x;
 
         int maxVal = *max_element(a.begin(), a.end());
-        for (int x : a)
-            x == maxVal ? c.push_back(x) : b.push_back(x);
+        for (int x : a) x == maxVal ? c.push_back(x) : b.push_back(x);
 
         if (b.size())
         {

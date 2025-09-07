@@ -19,10 +19,9 @@ int main()
         for (int &x : vec) cin >> x;
 
         for (int i = 0; i < size; i++)
-        {
             if (i == 0 || vec[i - 1] <= vec[i]) ans.push_back(vec[i]);
             else ans.push_back(vec[i]), ans.push_back(vec[i]);
-        }
+
         cout << ans.size() << endl;
         for (int x : ans) cout << x << " ";
         cout << endl;
