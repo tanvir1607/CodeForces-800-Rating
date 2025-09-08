@@ -1,3 +1,4 @@
+// Approach - 1 -> Counting and Reset
 #include <bits/stdc++.h>
 using namespace std;
 
@@ -13,15 +14,14 @@ int main()
     cin >> test;
     while (test--)
     {
-        int size;
+        int size, count = 0, ans = 0;
         cin >> size;
         vector<int> vec(size);
         for (int &x : vec) cin >> x;
 
-        int count = 0, ans = 0;
-        for (int i = 0; i < size; i++)
+        for (int x : vec)
         {
-            vec[i] == 0 ? count++ : count = 0;
+            count = !x ? count + 1 : 0;
             ans = max(ans, count);
         }
         cout << ans << endl;
@@ -31,6 +31,10 @@ int main()
 }
 
 
+
+
+
+// Approach - 2 -> Two pointers
 #include <bits/stdc++.h>
 using namespace std;
 
@@ -46,15 +50,14 @@ int main()
     cin >> test;
     while (test--)
     {
-        int size;
+        int size, l = 0, r = 0, ans = 0;
         cin >> size;
         vector<int> vec(size);
         for (int &x : vec) cin >> x;
 
-        int l = 0, r = 0, ans = 0;
         while (r < size)
         {
-            if (vec[r] == 0) ans = max(ans, r - l + 1), r++;
+            if (!vec[r]) ans = max(ans, r - l + 1), r++;
             else r++, l = r;
         }
         cout << ans << endl;
