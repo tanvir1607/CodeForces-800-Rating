@@ -1,3 +1,4 @@
+// Approach - 1
 #include <bits/stdc++.h>
 using namespace std;
 
@@ -23,6 +24,9 @@ int main()
 
 
 
+
+
+// Approach - 2
 #include <bits/stdc++.h>
 using namespace std;
 
