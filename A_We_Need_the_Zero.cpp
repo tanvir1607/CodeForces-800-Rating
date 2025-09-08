@@ -17,7 +17,7 @@ int main()
         cin >> size;
         vector<int> vec(size);
         for (int &x : vec) cin >> x, xorSum ^= x;
-        cout << (size & 1 || xorSum == 0 ? xorSum : -1) << endl;
+        cout << ((size & 1) || (!xorSum) ? xorSum : -1) << endl;
     }
 
     return 0;

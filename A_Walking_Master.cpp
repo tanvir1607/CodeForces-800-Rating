@@ -27,7 +27,7 @@ int main()
             cout << -1 << endl;
             continue;
         }
-        moves += abs(di - si);
+        moves += si - di;
         cout << moves << endl;
     }
 
