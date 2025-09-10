@@ -1,3 +1,4 @@
+// Approach - 1
 #include <bits/stdc++.h>
 using namespace std;
 
@@ -25,6 +26,11 @@ int main()
     return 0;
 }
 
+
+
+
+
+// Approach - 2
 #include <bits/stdc++.h>
 using namespace std;
 
@@ -48,6 +54,5 @@ int main()
                 *min_element(vec.begin(), vec.end()) << endl;
     }
     
-
     return 0;
 }
