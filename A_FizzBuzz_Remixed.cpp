@@ -17,7 +17,8 @@ int main()
         cin >> num;
 
         int terms = (num / 15) * 3;
-        terms += num % 15 == 0 ? 1 : num % 15 == 1 ? 2 : 3;
+        terms += num % 15 == 0 ? 1 : 
+                    num % 15 == 1 ? 2 : 3;
         cout << terms << endl;
     }
 
