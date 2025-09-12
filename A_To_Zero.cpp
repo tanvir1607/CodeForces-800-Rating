@@ -1,3 +1,4 @@
+// Approach - 1
 #include <bits/stdc++.h>
 using namespace std;
 
@@ -13,14 +14,13 @@ int main()
     cin >> test;
     while (test--)
     {
-        int n, k;
+        int n, k, operation = 0;
         cin >> n >> k;
 
-        int op = 0;
-        op += n & 1 ? (n -= k, --k, 1) : (--k, 0);
-        op += n / k;
-        op += n % k ? 1 : 0;
-        cout << op << endl;
+        if (n & 1) n -= k, operation++;
+        --k;
+        operation += n / k + (n % k ? 1 : 0);
+        cout << operation << endl;
     }
 
     return 0;
@@ -30,7 +30,7 @@ int main()
 
 
 
-
+//Approach - 2
 #include <bits/stdc++.h>
 using namespace std;
 
@@ -46,14 +46,12 @@ int main()
     cin >> test;
     while (test--)
     {
-        int n, k;
+        int n, k, operation = 0;
         cin >> n >> k;
 
-        int op = 0;
-        if (n & 1) n -= k, op = 1;
-        --k;
-        op += (n + k - 1) / k;
-        cout << op << endl;
+        operation += n & 1 ? (n -= k, k--, 1) : (k--, 0);
+        operation += (n + k - 1) / k;
+        cout << operation << endl;
     }
 
     return 0;
