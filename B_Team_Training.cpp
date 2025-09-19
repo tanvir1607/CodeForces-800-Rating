@@ -21,10 +21,8 @@ int main()
         sort(vec.rbegin(), vec.rend());
         int member = 1, team = 0;
         for (int x : vec)
-        {
             if (member * x >= target) team++, member = 1;
             else member++;
-        }
         cout << team << endl;
     }
 
